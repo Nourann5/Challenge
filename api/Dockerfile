@@ -39,5 +39,5 @@ RUN composer install --ignore-platform-reqs
 # Expose port 8000 for the application
 EXPOSE 8000
 
-# Command to start the PHP built-in server
+# Command to start the PHP server
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
