@@ -32,4 +32,6 @@ jobs:
           context: ./api  # the directory where Dockerfile is located
           file: ./api/Dockerfile  # Explicit path to the Dockerfile
           push: true
-          tags: nouranahmed5/api:${{ github.run_number }} # Dynamic tag using the build number
+          tags: |
+            nouranahmed5/api:${{ github.run_number }}  
+            nouranahmed5/api:latest   
