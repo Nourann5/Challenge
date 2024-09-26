@@ -24,5 +24,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: ./api  # the directory where Dockerfile is located
+          file: ./api/Dockerfile  # Explicit path to the Dockerfile
           push: true
-          tags: user/php-app:${{ github.run_number }}  # Dynamic tag using the build number
+          tags: user/app:${{ github.run_number }} # Dynamic tag using the build number
