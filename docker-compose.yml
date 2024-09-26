@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./cert:/etc/nginx/cert
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - api
+      - client
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile2 
+    ports:
+      - "8000:8000"
+    restart: always
+    env_file:
+      - ./api/.env 
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile 
+    ports:
+      - "3000:3000"
+    #restart: always
+    env_file:
+      - ./client/.env 
+  db:
+    image: mysql:8.0.38-debian
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bookapi
+      MYSQL_USER: bookuser
+      MYSQL_PASSWORD: booksecurepassword
+    volumes:
+      - mysql:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+volumes:
+  mysql:
