@@ -20,10 +20,10 @@ Make sure you have the following installed on your machine:
 
 ### 1. Clone the Repository
 
-bash
+```
 git clone https://github.com/Nourann5/Challenge.git
 cd Challenge
-
+```
 
 ### 2. Build and Run Containers
 
@@ -73,29 +73,35 @@ Nginx is set up as a reverse proxy, forwarding HTTP/HTTPS traffic to the client 
 - A self-signed SSL certificate has been generated for the Nginx server, making it accessible over HTTPS on port 443.
 - The following steps shows how i created it:
 1- Make sure you have OpenSSL installed , check by using :
-   bash
+   ```
    openssl version
+   ```
   If it’s not installed, you can install it using your package manager, ex for UBUNTU :
-   bash
+   ```
    sudo apt update
    sudo apt install openssl
+   ```
 
 2- Generate a Private Key:
-   bash
+   ```
    openssl genrsa -out wildcard.example.com.key 2048
+   ```
 
 3- Create a Certificate Signing Request (CSR):
-   bash
+   ```
    openssl req -new -key wildcard.example.com.key -out wildcard.example.com.csr
+   ```
   (And Specified `*.example.com` when asked for Common Name)
 
 4- Creating the Self-Signed Certificate:
-   bash
+   ```
    openssl x509 -req -days 365 -in wildcard.example.com.csr -signkey wildcard.example.com.key -out wildcard.example.com.crt
+   ```
 
 5- Verify the Certificate:
-   bash
+   ```
    openssl x509 -in wildcard.example.com.crt -text -noout
+   ```
 
 6- Configure Nginx to use the self-signed certificate in `nginx.conf` file by adding ssl_certificate & ssl_certificate_key paths.
 
@@ -110,23 +116,23 @@ This repository also includes a GitHub Actions workflow for CI/CD:
 
 To stop and remove the running containers, run:
 
-bash
+```
 docker-compose down
-
+```
 
 ### 7. Troubleshooting
 
 If you encounter issues with the containers or services, try rebuilding the images:
 
-bash
+```
 docker-compose up --build --force-recreate
-
+```
 
 You can also view the logs for each service by running:
 
-bash
+```
 docker-compose logs -f
-
+```
 
 ### 8. Folder Structure
 
@@ -183,14 +189,19 @@ Screenshots here to show the application up and running with Docker Compose and 
 
 These to demonstrate the commands users will frequently run:
 
-bash
-# Start all services (with build)
+
+#### Start all services (with build)
+```
 docker-compose up --build
+```
 
-# Stop and remove containers
+#### Stop and remove containers
+```
 docker-compose down
+```
 
-# View logs for a service (e.g., nginx)
+#### View logs for a service (e.g., nginx)
+```
 docker-compose logs nginx
-
+```
 
