@@ -9,6 +9,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Ensures the repository is checked out
+        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       
@@ -24,7 +27,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./client  # Set this to the directory where your Dockerfile is located
+          context: ./client  # the directory where your Dockerfile is located
           file: ./client/Dockerfile  # Explicit path to the Dockerfile
           push: true
           tags: user/app:${{ github.run_number }}  # Dynamic tag using the build number

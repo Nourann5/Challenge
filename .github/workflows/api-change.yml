@@ -9,6 +9,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Ensures the repository is checked out
+        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       
