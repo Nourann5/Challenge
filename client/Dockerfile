@@ -20,7 +20,7 @@ RUN npm run build
 
 # Stage 2: Serve the frontend
 FROM node:${NODE_VERSION}-slim AS deploy
-
+#Specify the work directory
 WORKDIR /app 
 # Copy the build files from the previous stage to the NGINX web server directory
 COPY --from=build /app/.output  /app/.output 
