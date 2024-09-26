@@ -1,4 +1,4 @@
-# Project Name
+# Project Overview
 
 This project consists of a PHP Laravel API and a Nuxt.js client, both containerized using Docker and orchestrated with Docker Compose. The project also includes an Nginx server acting as a reverse proxy and a MySQL database for the Laravel API.
 
@@ -29,9 +29,9 @@ cd Challenge
 
 Run the following command to build the Docker images and start the services:
 
-bash
-docker-compose up --build
-
+```
+docker-compose up 
+```
 
 This command will:
 
@@ -110,7 +110,7 @@ Nginx is set up as a reverse proxy, forwarding HTTP/HTTPS traffic to the client 
 
 This repository also includes a GitHub Actions workflow for CI/CD:
 - On each push to the main branch with updating any of /api or /client folders, Docker images for the API and Client are built and pushed to Docker Hub.
-- You can configure your Docker Hub credentials by setting the DOCKER_USERNAME and DOCKER_PASSWORD secrets in your repository.
+- You can configure your Docker Hub credentials by setting the DOCKER_USERNAME and DOCKER_TOKEN secrets in your repository.
 
 ### 6. Shutting Down the Services
 
