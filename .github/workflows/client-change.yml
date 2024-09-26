@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'client/**'
 
 jobs:
   docker:
@@ -27,4 +25,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: nouranahmed5/php-app:${{ github.run_number }}  # Dynamic tag using the build number
+          tags: user/php-app:${{ github.run_number }}  # Dynamic tag using the build number
