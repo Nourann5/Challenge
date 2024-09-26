@@ -27,4 +27,4 @@ jobs:
           context: ./client  # Set this to the directory where your Dockerfile is located
           file: ./client/Dockerfile  # Explicit path to the Dockerfile
           push: true
-          tags: user/app:${{ github.run_number }}
+          tags: user/app:${{ github.run_number }}  # Dynamic tag using the build number
