@@ -136,19 +136,21 @@ docker-compose logs -f
 
 ### 8. Folder Structure
 
-> ├── .github/workflows/   # GithubActions For CI/CD 
-  │
-  ├── api/                # PHP Laravel API
-  │   ├── Dockerfile
-  ├── client/             # Nuxt.js Client
-  │   ├── Dockerfile
-  ├── cert/              # SSL certificate
-  │   ├── nginx.crt      # Self-signed certificate
-  │   ├── nginx.key      # Private key
-  │
-  ├── nginx.conf          # Nginx Configurations
-  ├── docker-compose.yml  # Docker Compose file to orchestrate services
-  └── README.md           # Project documentation
+```
+├── .github/workflows/   # GithubActions For CI/CD 
+│
+├── api/                # PHP Laravel API
+│   ├── Dockerfile
+├── client/             # Nuxt.js Client
+│   ├── Dockerfile
+├── cert/              # SSL certificate
+│   ├── nginx.crt      # Self-signed certificate
+│   ├── nginx.key      # Private key
+│
+├── nginx.conf          # Nginx Configurations
+├── docker-compose.yml  # Docker Compose file to orchestrate services
+└── README.md           # Project documentation
+```
 
 
 ## Screenshots
