@@ -180,11 +180,6 @@ Screenshots here to show the application up and running with Docker Compose and 
 
 
 
-![Screenshot_3](https://github.com/user-attachments/assets/1614e4d1-494e-4a53-b519-c0e3362b5933)
-
-
-
-
 ![Screenshot 2024-09-27 013202](https://github.com/user-attachments/assets/406f75fc-7885-4c7c-9b6c-54d3ab938170)
 
 
