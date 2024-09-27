@@ -157,7 +157,7 @@ docker-compose logs -f
 
 Screenshots here to show the application up and running with Docker Compose and the application being accessed through the Nginx Proxy:
 
-The Application up and running using Docker-Compose : 
+- The Application up and running using Docker-Compose : 
 
 ![Screenshot 2024-09-27 004320](https://github.com/user-attachments/assets/3fcb3b99-bf52-49ea-a624-7600e21c168c)
 
@@ -167,7 +167,7 @@ The Application up and running using Docker-Compose :
 
 
 
-The Nuxt.js application is being accessed through the Nginx proxy:
+- The Nuxt.js application is being accessed through the Nginx proxy:
 
 ![Screenshot_1](https://github.com/user-attachments/assets/90b2c4ce-a44d-435d-921d-26b0f5362a57)
 
@@ -179,18 +179,18 @@ The Nuxt.js application is being accessed through the Nginx proxy:
 
 
 
-MySQL database is running and accessed :
+- MySQL database is running and accessed :
 
 ![Screenshot 2024-09-27 013202](https://github.com/user-attachments/assets/406f75fc-7885-4c7c-9b6c-54d3ab938170)
 
 
 
-
+- The /api/books route : 
 ![Screenshot_2](https://github.com/user-attachments/assets/a6f6dc6d-78fb-4477-b72d-a7997dff71f6)
 
 
 
-
+- The CI/CD running by adding Documentation for DockerFiles for both API and CLIENT :
 ![Screenshot 2024-09-27 142436](https://github.com/user-attachments/assets/8871e437-8a66-4a39-956f-55023490305c)
 
 
