@@ -76,7 +76,7 @@ Nginx is set up as a reverse proxy, forwarding HTTP/HTTPS traffic to the client 
    ```
    openssl version
    ```
-  If it’s not installed, you can install it using your package manager, ex for UBUNTU :
+  If it’s not installed, you can install it using your package manager, ex for Ubuntu :
    ```
    sudo apt update
    sudo apt install openssl
@@ -169,7 +169,6 @@ Screenshots here to show the application up and running with Docker Compose and 
 
 
 
-
 ![Screenshot_1](https://github.com/user-attachments/assets/90b2c4ce-a44d-435d-921d-26b0f5362a57)
 
 
@@ -178,6 +177,10 @@ Screenshots here to show the application up and running with Docker Compose and 
 
 ![Screenshot_3](https://github.com/user-attachments/assets/5ce28837-3483-48d7-bfc8-d6b99b3560b9)
 
+
+
+
+![Screenshot_3](https://github.com/user-attachments/assets/1614e4d1-494e-4a53-b519-c0e3362b5933)
 
 
 
