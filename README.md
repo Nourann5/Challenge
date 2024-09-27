@@ -190,7 +190,7 @@ Screenshots here to show the application up and running with Docker Compose and 
 
 
 
-![Screenshot_3](https://github.com/user-attachments/assets/3d12ce48-3a67-4a9e-bd90-db31e5e83253)
+![Screenshot_2](https://github.com/user-attachments/assets/a6f6dc6d-78fb-4477-b72d-a7997dff71f6)
 
 
 
