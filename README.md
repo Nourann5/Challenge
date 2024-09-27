@@ -189,6 +189,11 @@ Screenshots here to show the application up and running with Docker Compose and 
 
 
 
+
+![Screenshot_3](https://github.com/user-attachments/assets/3d12ce48-3a67-4a9e-bd90-db31e5e83253)
+
+
+
 ### Example Docker Compose Commands
 
 These to demonstrate the commands users will frequently run:
