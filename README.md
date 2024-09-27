@@ -44,7 +44,7 @@ This command will:
 
 Once the services are up and running, you can access the Nuxt.js application through the Nginx reverse proxy:
 
-- Open your /etc/hosts and list 127.0.0.1 as book.example.com
+- Open your `/etc/hosts` and list `127.0.0.1` as `book.example.com`
 - Then open your browser and go to https://books.example.com .
 
 ### 4. Services Overview
@@ -109,8 +109,8 @@ Nginx is set up as a reverse proxy, forwarding HTTP/HTTPS traffic to the client 
 ### 5. CI/CD with GitHub Actions
 
 This repository also includes a GitHub Actions workflow for CI/CD:
-- On each push to the main branch with updating any of /api or /client folders, Docker images for the API and Client are built and pushed to Docker Hub.
-- You can configure your Docker Hub credentials by setting the DOCKER_USERNAME and DOCKER_TOKEN secrets in your repository.
+- On each push to the main branch with updating any of `/api` or `/client` folders, Docker images for the API and Client are built and pushed to Docker Hub.
+- You can configure your Docker Hub credentials by setting the `DOCKER_USERNAME` and `DOCKER_TOKEN` secrets in your repository.
 
 ### 6. Shutting Down the Services
 
