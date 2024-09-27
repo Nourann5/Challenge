@@ -1,43 +1,47 @@
-version: '3.8'
+version: '3.8' # Specifies the Docker Compose file format version to use.
 
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:latest # Uses the latest version of the NGINX image from Docker Hub.
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./cert:/etc/nginx/cert
+      - ./nginx.conf:/etc/nginx/nginx.conf # Maps a local nginx.conf file to the container's NGINX config file.
+      - ./cert:/etc/nginx/cert # Maps a local directory with certificates to the container's certificate directory.
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80" # Maps port 80 on the host to port 80 on the container (HTTP).
+      - "443:443" # Maps port 443 on the host to port 443 on the container (HTTPS).
     depends_on:
-      - api
-      - client
+      - api # Ensures the 'api' service starts before this one.
+      - client # Ensures the 'client' service starts before this one.
+
   api:
-    image: nouranahmed5/api:latest
+    image: nouranahmed5/api:latest # Uses the latest version of a custom API image.
     ports:
-      - "8000:8000"
-    restart: always
+      - "8000:8000" # Maps port 8000 on the host to port 8000 on the container (for the API).
+    restart: always # Restarts the container automatically if it stops or crashes.
     env_file:
-      - ./api/.env 
+      - ./api/.env # Loads environment variables from a .env file located in the local API directory.
+
   client:
-    image: nouranahmed5/client:latest
+    image: nouranahmed5/client:latest # Uses the latest version of a custom client image.
     ports:
-      - "3000:3000"
-    #restart: always
+      - "3000:3000" # Maps port 3000 on the host to port 3000 on the container (for the client).
+    #restart: always # Option to restart the container automatically if it stops or crashes (commented out for now).
     env_file:
-      - ./client/.env 
+      - ./client/.env # Loads environment variables from a .env file located in the local client directory.
+
   db:
-    image: mysql:8.0.38-debian
-    container_name: db
+    image: mysql:8.0.38-debian # Uses a specific version of the MySQL database image (Debian-based).
+    container_name: db # Names the container 'db' for easier identification.
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: bookapi
-      MYSQL_USER: bookuser
-      MYSQL_PASSWORD: booksecurepassword
+      MYSQL_ROOT_PASSWORD: root_password # Sets the root password for the MySQL instance.
+      MYSQL_DATABASE: bookapi # Creates a database named 'bookapi'.
+      MYSQL_USER: bookuser # Creates a MySQL user named 'bookuser'.
+      MYSQL_PASSWORD: booksecurepassword # Sets the password for the 'bookuser'.
     volumes:
-      - mysql:/var/lib/mysql
-    restart: always
+      - mysql:/var/lib/mysql # Persists MySQL data in a Docker volume.
+    restart: always # Ensures the database restarts automatically if it stops or crashes.
     ports:
-      - "3306:3306"
+      - "3306:3306" # Maps port 3306 on the host to port 3306 on the container (MySQL).
+
 volumes:
-  mysql:
+  mysql: # Declares a Docker volume for persistent MySQL data storage.
